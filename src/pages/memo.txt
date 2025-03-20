@@ -1,0 +1,38 @@
+Contact :
+Snap image(QRCODE)
+Facebook(logo + redirect + text)
+Instagram(Logo + redirect + text)
+Numero de tel
+
+Home :
+title (image logo entreprise)
+emoji
+animation + image background + banner(banner + le logo de l'entreprise) + horraire d'ouverture 
+ADRESSE google map + image de l'endroit
+
+Extra :
+Mention legale 
+Créateur moi
+
+Gallery : 
+{Image}
+Titre de la coupe 
+survolé et voir le prix
+
+Mail ? :
+champ "mail" + "Le message"
+
+
+
+Home : 
+même ligne sur la gauche :
+Ou nous trouver juste endessoous de "ou nous trouvé" mettre l'adresse du barber +le bouton vers le lien google map apres au milieu mettre une image du barber vers l'exterieur
+
+sur la droite ajouté l'horraire
+
+ligne trois photo de la gallery des coupe plus bouton de redirect(voir plus) vers gallery
+
+trois derniers avis + bouton redirect vers "avis" 
+
+page Contact en footer
+

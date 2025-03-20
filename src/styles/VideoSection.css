@@ -1,0 +1,13 @@
+.video-container {
+    width: 100%;
+    height: 800px; /* Ajuste la hauteur selon ton besoin */
+    overflow: hidden;
+  }
+  
+  .background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+  }
+  

@@ -1,0 +1,76 @@
+.contact-container {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+  }
+  .social-btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.2s;
+    position: relative;
+  }
+  .facebook { background: #1877f2; }
+  .instagram { background: #e4405f; }
+  .snapchat {
+    background: #fffc00;
+    color: black;
+    width: auto;
+    padding: 0 15px;
+    border-radius: 25px;
+  }
+  .snap-icon {
+    width: 24px;
+    height: 24px;
+  }
+  .snap-username {
+    margin-left: 8px;
+    font-weight: bold;
+  }
+  .phone-icon{
+    width: 24px;
+    height: 24px;
+  }
+  .phonenumber{
+    margin-left: 8px;
+    font-weight: bold;
+  }
+  .phone {
+    background:rgb(6, 194, 0);
+    color: black;
+    width: auto;
+    padding: 0 15px;
+    border-radius: 25px;
+  }
+    .social-email{
+    color: rgb(184, 104, 0);
+    width: auto;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+    }
+  .icon-mail{
+   margin-right: -10px;
+   
+   margin-left: 0px;
+  }
+    .email {
+    margin-top: 4px;
+    font-weight: bold;
+    }  
+  .social-btn:hover {
+    transform: scale(1.1);
+  }
