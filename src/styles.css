@@ -1,6 +1,12 @@
 body {
     font-family: Arial, sans-serif;
     padding: 0;
-    background-color: #ec4b4b;
+    background-color: #add8e6;
+    overflow-x: hidden;
+    width: 100%;
   }
-
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }

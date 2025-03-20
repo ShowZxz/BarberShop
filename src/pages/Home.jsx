@@ -69,7 +69,8 @@ const spanVariants = {
       {/* Section Emplacement & Horaires */}
       <div className="info-container">
         {/* 📍 À gauche : Adresse + Bouton Google Maps */}
-        <div className="adresse-container">
+        <motion.div className="adresse-container"
+        whileHover={{ scale: 1.1 }}>
           <h1>📍 Où nous trouver :</h1>
           <p><strong >3 Pl. du 14 Juillet, 91270 Vigneux-sur-Seine</strong><br />Hae duae provinciae bello quondam piratico catervis mixtae praedonum a Servilio pro consule missae sub iugum factae sunt vectigales. et hae quidem regiones velut in prominenti terrarum lingua positae ob orbe eoo monte Amano disparantur.</p>
           <a
@@ -80,7 +81,7 @@ const spanVariants = {
           >
             Voir sur Google Maps
           </a>
-        </div>
+        </motion.div>
 
         {/* 🏠 Au centre : Image de l'emplacement */}
         <div className="image-container">
@@ -88,7 +89,8 @@ const spanVariants = {
         </div>
 
         {/* 🕰️ À droite : Horaires */}
-        <div className="horaires-container">
+        <motion.div className="horaires-container"
+        whileHover={{ scale: 1.1 }}>
           <h1>🕰️ Horaires d'Ouverture</h1>
           <ul>
             {horaires.map((item, index) => (
@@ -98,7 +100,7 @@ const spanVariants = {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       </div>
       <hr className="horizontal-line" />
 

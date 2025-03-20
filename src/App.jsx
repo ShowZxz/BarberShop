@@ -20,13 +20,18 @@ function App() {
           initial="hidden"
           animate="visible"
       src="./vite.svg" alt="logo" className='logo' />
-        <ul>
+        <motion.ul
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
+          whileHover={{ scale: 1.1 }}
+        >
           <li><Link to="/">Accueil</Link></li>
           <li><Link to="/services">Services</Link></li>
           <li><Link to="/gallery">Galerie</Link></li>
           <li><Link to="/reviews">Avis</Link></li>
           <li><Link to="/contact">Contact</Link></li>
-        </ul>
+        </motion.ul>
       </nav>
 
       <Routes>

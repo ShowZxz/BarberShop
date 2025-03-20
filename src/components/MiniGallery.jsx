@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "../styles/MiniGallery.css";
-
+import { motion } from "framer-motion";
 const images = [
   { src: "/images/coupe1.jpg", title: "Dégradé Classique" },
   { src: "/images/coupe2.jpg", title: "Tresses Afro" },
@@ -32,7 +32,9 @@ function MiniGallery() {
       <div className="image-slider">
         {images.slice(index, index + 3).map((img, i) => (
           <div key={i} className="image-cont">
-            <img src={img.src} alt={img.title} />
+            <motion.img src={img.src} alt={img.title} 
+            whileHover={{ scale: 1.05}}
+            />
             <h3>{img.title}</h3>
           </div>
         ))}

@@ -86,9 +86,9 @@
       max-width: 300px;
       text-align: center;
       padding: 20px;
-      background: #00DDFF;
+      background: #134074;
       border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
     }
     .adresse-container h1 {
       font-size: 22px;
@@ -116,7 +116,7 @@
     .image-container img {
       height: auto;
       border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
     }
 
     /* 🕰️ Bloc Horaires */
@@ -126,7 +126,7 @@
       background: #00DDFF;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
       text-align: left;
     }
     .horaires-container h1 {
