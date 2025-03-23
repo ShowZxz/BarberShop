@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import "../styles/Gallery.css";
+
 function Gallery() {
   const images = [
     { src: "/images/coupe1.jpg", name: "Dégradé Américain" },
@@ -12,23 +13,14 @@ function Gallery() {
 
   return (
     <div className="gallery-container">
-      <h1>Nos Coupes</h1>
-
       <div className="gallery-grid">
         {images.map((image, index) => (
-          <motion.div
-            key={index}
-            className="gallery-item"
-            initial={{ opacity: 0, y: 50 }} // Départ en bas avec opacité 0
-            animate={{ opacity: 1, y: 0 }} // Arrive à sa place normale
-            transition={{ duration: 0.5, delay: index * 0.2 }} // Décalage pour effet "distribution"
-          >
-            <img src={image.src} alt={image.name} />
-            <p>{image.name}</p>
-          </motion.div>
+          <div key={index} className="gallery-item">
+            <img src={image.src} alt={image.name} className="gallery-image" />
+            <span className="gallery-title">{image.name}</span>
+          </div>
         ))}
       </div>
-
     </div>
   );
 }

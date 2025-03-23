@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import "../styles/Services.css";
 import { Link } from "react-router-dom";
+import TopServicesSection from "../components/TopServicesSection";
 
 const categories = {
   Cheveux: [
@@ -46,7 +47,7 @@ function Services() {
       animate={{ opacity: 1, y: 0, transition: { duration: 1 } }}
       exit={{ opacity: 0, y: -50, transition: { duration: 0.5 } }}
     >
-      <h1>Nos Services</h1>
+      <TopServicesSection />
 
       <div className="services-grid">
         {Object.entries(categories).map(([category, items]) => (
