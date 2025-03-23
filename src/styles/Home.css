@@ -52,6 +52,8 @@
       color: white;
       font-size: 25px;
       padding: 2px;
+      margin-left: 10px;
+      margin-right: 10px;
       text-shadow: 2px 2px 4px black;
       line-height: 28px;
       letter-spacing: 1px;
@@ -61,7 +63,7 @@
     } 
     .slogan-div h2{
       font-weight: normal;
-      text-shadow: rgba(255, 0, 0, 0.2) 1px 0 10px;
+      text-shadow: rgba(0, 0, 0, 0.2) 1px 0 10px;
       margin-bottom: 30px;
       width: 100%;
       color: white;

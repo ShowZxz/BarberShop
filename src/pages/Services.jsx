@@ -1,55 +1,79 @@
-function Services() {
-  const categories = {
-    "Cheveux": [
-      {name: "Coupe tondeuse", price: "15€" },
-      {name: "Coupe ciseaux", price: "15€" },
-      {name: "Rasage cranien", price: "10€" },
-      {name:"Coupe enfant (-12 ans)", price:"10€"},
-      {name:"Contours", price:"5€"},
-      {name:"Motif", price:"(à partir de) 5€"},
-      {name:"Raie", price:"OFFERT"}
-    ],
-    "Soins cheveux": [
-      { name: "Défrisage", price: "10€" },
-      { name: "Curly", price: "(à partir de) 10€"},
-      { name: "Décoloration", price: "10€" },
-      { name: "Coloration", price: "(à partir de) 10€" },
-      { name: "Polar white", price: "(à partir de) 50€" }
-    ],
-    "Soins visage": [
-      { name: "Black masque", price: "7€" },
-      { name: "Serviette chaude", price: "5€" }
-    ],
-    "Barbe": [
-      { name: "Rasage complet", price: "10€" }
-      
-    ],
-    "Formules": [
-      { name: "Coupe + Barbe", price: "20€" },
-      { name: "Coupe + motif", price: "20€" },
-      { name: "Rasage cranien + Barbe", price: "15€" }
-      
-    ]
-  };
+import { motion } from "framer-motion";
+import "../styles/Services.css";
+import { Link } from "react-router-dom";
 
+const categories = {
+  Cheveux: [
+    { name: "Coupe tondeuse", price: "15€" },
+    { name: "Coupe ciseaux", price: "15€" },
+    { name: "Rasage cranien", price: "10€" },
+    { name: "Coupe enfant (-12 ans)", price: "10€" },
+    { name: "Contours", price: "5€" },
+    { name: "Motif", price: "(à partir de) 5€" },
+    { name: "Raie", price: "OFFERT" }
+  ],
+  Soins: [
+    { name: "Défrisage", price: "10€" },
+    { name: "Curly", price: "(à partir de) 10€" },
+    { name: "Décoloration", price: "10€" },
+    { name: "Coloration", price: "(à partir de) 10€" },
+    { name: "Polar white", price: "(à partir de) 50€" },
+    { name: "Black masque", price: "7€" },
+    { name: "Serviette chaude", price: "5€" }
+  ],
+  Barbe: [
+    { name: "Rasage complet", price: "10€" }
+  ],
+  Formules: [
+    { name: "Coupe + Barbe", price: "20€" },
+    { name: "Coupe + motif", price: "20€" },
+    { name: "Rasage cranien + Barbe", price: "15€" }
+  ]
+};
+
+const categoryImages = {
+  Cheveux: "/images/coupe1.jpg",
+  Soins: "/images/coupe1.jpg",
+  Barbe: "/images/coupe1.jpg",
+  Formules: "/images/coupe1.jpg"
+};
+
+function Services() {
   return (
-    <div>
+    <motion.div
+      className="services-container"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0, transition: { duration: 1 } }}
+      exit={{ opacity: 0, y: -50, transition: { duration: 0.5 } }}
+    >
       <h1>Nos Services</h1>
-      <div style={{ textAlign: "center" }}>
-        {Object.keys(categories).map((category, index) => (
-          <div key={index} style={{ marginBottom: "20px" }}>
-            <h2 style={{ color: "#8B0000" }}>{category}</h2>
-            <ul style={{ listStyle: "none", padding: 0 }}>
-              {categories[category].map((service, i) => (
-                <li key={i} style={{ fontSize: "18px", margin: "5px 0" }}>
-                  {service.name} - <strong>{service.price}</strong>
-                </li>
-              ))}
-            </ul>
+
+      <div className="services-grid">
+        {Object.entries(categories).map(([category, items]) => (
+          <div key={category} className="category-card">
+            {/* Image en haut */}
+            <div className="image-services">
+              <img src={categoryImages[category]} alt={category} />
+            </div>
+
+            {/* Contenu texte */}
+            <div className="category-info">
+              <h2>{category}</h2>
+              <ul>
+                {items.map((item, index) => (
+                  <li key={index}>
+                    {item.name} - <span className="price">{item.price}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link to="/gallery">
+              <button className="discover-btn">DÉCOUVRIR</button>
+              </Link>
+            </div>
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

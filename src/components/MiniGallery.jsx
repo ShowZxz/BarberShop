@@ -25,7 +25,10 @@ function MiniGallery() {
 
   return (
     <div className="mini-gallery">
+      <h2>Notre galerie</h2>
+      <p>Découvrez nos dernières créations</p>
       <button className="nav-button left" onClick={prevSlide}>
+        
         <ChevronLeft size={30} />
       </button>
 

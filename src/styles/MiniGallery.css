@@ -1,9 +1,9 @@
 .mini-gallery {
     display: flex;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-bottom: 10px;
     flex-direction: column;
-    background-color: aliceblue;
+    background-color: #b31b1b;
     align-items: center;
     position: relative;
     justify-content: center; /* Centrer les images */
@@ -36,8 +36,8 @@
 
   .image-cont h3 {
     margin-top: 10px;
-    font-size: 16px;
-    color: #333;
+    font-size: 18px;
+    color: #ffffff;
   }
 
   .nav-button {
@@ -50,20 +50,32 @@
     top: 50%;
     transform: translateY(-50%);
     color: black;
-  }
+    transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
 
-  .nav-button.left {
+.nav-button:hover {
+    background-color: #035c69;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    opacity: 0.5;
+}
+.nav-button:active {
+    transform: translateY(-50%) scale(1.2);
+    opacity: 1;
+}
+
+.nav-button.left {
     left: -400px;
     background-color: #00DDFF;
     border-radius: 10px;
-    
-  }
+}
 
-  .nav-button.right {
+.nav-button.right {
     right: -400px;
     background-color: #00DDFF;
     border-radius: 10px;
-  }
+}
+
 
   .view-more {
     margin-top: 20px;

@@ -18,28 +18,36 @@ const paragraphe = "Principium autem unde latius se funditabat, emersit ex negot
 const headerVariants = {
     hidden: { opacity: 0, scale: 1},
     visible: { opacity: 1, scale: 1.3,  transition: { duration: 1, delay: 1,type:"spring",stiffness:100 } },
+    exit: {x: '-100vw', transition: { ease: 'easeInOut' } }
 };
 const divVariants = {
     hidden: { x: '-100vw'},
     visible: {  x: 0,  transition: { duration: 2, delay: 0.3,type:"spring",stiffness:30} },
+    exit: {x: '-100vw',opacity: 0, transition: { ease: 'easeInOut',duration: 0.5, delay: 0.3 } }
 };
 const spanVariants = {
     hidden: { opacity: 0},
     visible: { opacity: 1,  transition: {duration: 4, delay: 2, type:"spring",stiffness:50 } },
+    exit: {x: '-100vw', transition: { ease: 'easeInOut' } }
 };
+
   return (
-    <div className="home-container">
+    <motion.div className="home-container"
+    variants={divVariants}
+    exit="exit">
       {/* Titre, slogan et image d'illustration */}
       <motion.div className="header-container"
           variants={divVariants}
           initial="hidden"
           animate="visible"
+          
           >
 
         <motion.h1 
         variants={headerVariants}
         initial="hidden"
         animate="visible"
+       
         >Le Bink's Barbershop</motion.h1>
         <div className="slogan-div">
 
@@ -47,13 +55,15 @@ const spanVariants = {
           variants={headerVariants}
           initial="hidden"
           animate="visible"
+          
           transition={{ duration: 3, delay: 2, type:"spring",stiffness:100  }}
           >Découvrez une nouvelle façon de se couper</motion.h2>
 
           <motion.span className="paragraphe"
           variants={spanVariants}
           initial="hidden"
-          animate="visible" 
+          animate="visible"
+          exit="exit" 
           >{paragraphe}</motion.span>
 
         </div>
@@ -62,7 +72,7 @@ const spanVariants = {
         
 
       </motion.div>
-
+      <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget erat placerat, interdum velit a, elementum orci. In tempor turpis.</h2>
       <hr className="horizontal-line" />
       
 
@@ -70,7 +80,8 @@ const spanVariants = {
       <div className="info-container">
         {/* 📍 À gauche : Adresse + Bouton Google Maps */}
         <motion.div className="adresse-container"
-        whileHover={{ scale: 1.1 }}>
+        whileHover={{ scale: 1.1 }}
+        >
           <h1>📍 Où nous trouver :</h1>
           <p><strong >3 Pl. du 14 Juillet, 91270 Vigneux-sur-Seine</strong><br />Hae duae provinciae bello quondam piratico catervis mixtae praedonum a Servilio pro consule missae sub iugum factae sunt vectigales. et hae quidem regiones velut in prominenti terrarum lingua positae ob orbe eoo monte Amano disparantur.</p>
           <a
@@ -113,7 +124,7 @@ const spanVariants = {
       <hr className="horizontal-line" />
       <div className="contact-class"><Contact /></div>
       
-    </div>
+    </motion.div>
     
   );
 }

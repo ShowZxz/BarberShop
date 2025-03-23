@@ -36,3 +36,12 @@ trois derniers avis + bouton redirect vers "avis"
 
 page Contact en footer
 
+Gallery : 
+- mettre les images a la même taille
+- (ajouté le prix associé a la coupe)
+- Bouton de redirection a NOS SERVICES
+- ajout footer
+
+Services :
+- option facile display l'image retravaillé de leurs services 
+- option hard https://thebarbercompany.fr/nos-prestations/
