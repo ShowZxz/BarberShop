@@ -88,7 +88,7 @@
       max-width: 300px;
       text-align: center;
       padding: 20px;
-      background: #134074;
+      background: #FFFFFF;
       border-radius: 10px;
       box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
     }
@@ -125,7 +125,7 @@
     .horaires-container {
       flex: 1;
       max-width: 300px;
-      background: #00DDFF;
+      background: #FFFFFF;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);

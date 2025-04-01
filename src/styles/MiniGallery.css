@@ -3,13 +3,20 @@
     margin-top: 30px;
     margin-bottom: 10px;
     flex-direction: column;
-    background-color: #b31b1b;
+    background-color: #DDD0C8;
     align-items: center;
     position: relative;
     justify-content: center; /* Centrer les images */
     gap: 10px; /* Espacement entre les images */
     overflow: visible; /* Évite un débordement */
     max-width: 100%;
+  }
+
+  .mini-gallery h2 {
+    font-size: 24px;
+    color: #aa8d5b;
+    /*text-shadow: #000000 1px 1px 2px;*/
+    margin-bottom: 10px;
   }
 
   .image-slider {
@@ -37,8 +44,10 @@
   .image-cont h3 {
     margin-top: 10px;
     font-size: 18px;
-    color: #ffffff;
+    color: #000000;
+    text-shadow: #DDD0C8 1px 1px 2px;
   }
+
 
   .nav-button {
     background: none;
@@ -66,13 +75,13 @@
 
 .nav-button.left {
     left: -400px;
-    background-color: #00DDFF;
+    background-color: #aa8d5b;
     border-radius: 10px;
 }
 
 .nav-button.right {
     right: -400px;
-    background-color: #00DDFF;
+    background-color: #aa8d5b;
     border-radius: 10px;
 }
 

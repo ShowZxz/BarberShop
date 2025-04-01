@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
 import "../styles/Gallery.css";
+import Contact from "../pages/Contact";
 
 function Gallery() {
   const images = [
@@ -11,16 +12,37 @@ function Gallery() {
     { src: "/images/coupe6.jpg", name: "Pompadour" },
   ];
 
+  // État pour stocker l'image sélectionnée
+  const [selectedImage, setSelectedImage] = useState(null);
+
   return (
-    <div className="gallery-container">
-      <div className="gallery-grid">
-        {images.map((image, index) => (
-          <div key={index} className="gallery-item">
-            <img src={image.src} alt={image.name} className="gallery-image" />
-            <span className="gallery-title">{image.name}</span>
-          </div>
-        ))}
+    <div className="base-container">
+      <div className="gallery-container">
+        <div className="gallery-grid">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="gallery-item"
+              onClick={() => setSelectedImage(image)} // Click pour ouvrir la modale
+            >
+              <img src={image.src} alt={image.name} className="gallery-image" />
+              <span className="gallery-title">{image.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
+
+      {/* Modale qui s'affiche si une image est sélectionnée */}
+      {selectedImage && (
+        <div className="modal-overlay" onClick={() => setSelectedImage(null)}>
+          <div className="modal-content">
+            <img src={selectedImage.src} alt={selectedImage.name} />
+            <span>{selectedImage.name}</span>
+          </div>
+        </div>
+      )}
+
+      <Contact />
     </div>
   );
 }

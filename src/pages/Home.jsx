@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import MiniGallery from "../components/MiniGallery";
 import Contact from "../pages/Contact";
 import VideoSection from "../components/VideoSection"; 
+import MentionLegal from "../components/MentionLegal";
 import "../styles/Home.css";
 function Home() {
   const horaires = [
@@ -123,6 +124,7 @@ const spanVariants = {
       </div>
       <hr className="horizontal-line" />
       <div className="contact-class"><Contact /></div>
+      <div className="mention-legal"><MentionLegal/></div>
       
     </motion.div>
     

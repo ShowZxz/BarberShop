@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "../styles/Reviews.css";
+
 function Reviews() {
   // Charger les avis depuis localStorage au démarrage
   const [reviews, setReviews] = useState(() => {
@@ -18,12 +19,6 @@ function Reviews() {
   useEffect(() => {
     localStorage.setItem("reviews", JSON.stringify(reviews));
   }, [reviews]);
-
-  // Suppression d'un avis par index
-  const handleDeleteReview = (index) => {
-    const updatedReviews = reviews.filter((_, i) => i !== index);
-    setReviews(updatedReviews);
-  };
 
   const handleChange = (e) => {
     setNewReview({ ...newReview, [e.target.name]: e.target.value });
@@ -51,7 +46,7 @@ function Reviews() {
   };
 
   return (
-    <div>
+    <div className="reviews-container">
       <h1>Avis Clients</h1>
 
       {/* Liste des avis */}
@@ -59,8 +54,6 @@ function Reviews() {
         <div key={index} className="review-card">
           <h3>{review.name} - {"⭐".repeat(review.rating)}</h3>
           <p>{review.comment}</p>
-          {/* Bouton pour supprimer l'avis */}
-          <button onClick={() => handleDeleteReview(index)} className="delete-btn">❌ Supprimer</button>
         </div>
       ))}
 
@@ -83,7 +76,6 @@ function Reviews() {
         <textarea name="comment" placeholder="Votre avis" value={newReview.comment} onChange={handleChange} required />
         <button type="submit" className="submit-btn">Envoyer</button>
       </form>
-
 
     </div>
   );
