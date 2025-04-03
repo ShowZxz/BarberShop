@@ -1,169 +1,218 @@
 @font-face {
-    font-family: 'Geo';
-    src: url('/fonts/GeosansLight.ttf') format('truetype');
+  font-family: "Geo";
+
+  src: url("/fonts/GeosansLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Head";
+  src: url("/fonts/Heading.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ROTHE";
+  src: url("/fonts/ROTHE-DEMO.ttf") format("truetype");
+}
+
+.home-container {
+  text-align: center;
+  padding: 0px;
+}
+.header-container {
+  margin-bottom: 30px;
+  position: relative;
+}
+.header-container h1 {
+  font-size: 120px;
+  letter-spacing: 5px;
+  padding: 0px;
+  color: #333;
+  text-shadow: #3333334b 1px 1px 2px;
+  font-family: "Head", sans-serif;
+}
+.header-container h2 {
+  font-size: 24px;
+  font-family: "Courier New", Courier, monospace;
+  color: #c99b4d;
+  text-shadow: #3333334b 1px 1px 2px;
+  margin-bottom: 20px;
+}
+.header-container img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 800px;
+  object-fit: cover;
+  border-radius: 0px;
+}
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+}
+.image-container img {
+  width: 800px;
+  left: 0px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slogan-div {
+  position: absolute;
+  margin: 200px;
+  top: 25%;
+}
+.slogan-div span {
+  color: white;
+  font-size: 25px;
+  padding: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-shadow: 2px 2px 4px black;
+  line-height: 28px;
+  letter-spacing: 1px;
+  width: 100%;
+  font-weight: 400;
+  font-family: "Geo", sans-serif;
+}
+.slogan-div h2 {
+  font-weight: normal;
+  text-shadow: rgba(0, 0, 0, 0.2) 1px 0 10px;
+  margin-bottom: 30px;
+  width: 100%;
+  color: white;
+  font-size: 50px;
+  line-height: 28px;
+  letter-spacing: 1px;
+}
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* 📍 Bloc Adresse */
+.adresse-container {
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
+}
+.adresse-container h1 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.adresse-container p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.map-button {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #ff5733;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.map-button:hover {
+  background: #e64c29;
+}
+
+/* 🏠 Image Emplacement */
+.image-container img {
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
+}
+
+/* 🕰️ Bloc Horaires */
+.horaires-container {
+  flex: 1;
+  max-width: 300px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
+  text-align: left;
+}
+.horaires-container h1 {
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+.horaires-container ul {
+  list-style: none;
+  padding: 0;
+}
+.horaires-container li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 18px;
+  border-bottom: 1px solid #ffffff;
+}
+.horaires-container li.ferme {
+  color: #ff1d58;
+  font-weight: bold;
+}
+.horizontal-line {
+  border: none;
+  border-top: 3px solid #ddd;
+  margin: 20px 0;
+}
+
+.go-top {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 20px;
+  right: 20px;
+  background: #ff5733;
+  border-radius: 50%;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0; /* Caché par défaut */
+  visibility: hidden;
+  transition: opacity 5.6s ease-in-out, visibility 5.6s;
+}
+
+.go-top.show {
+  opacity: 1;
+  transition-delay: 2s;
+  background-color: #ff1d58;
+  visibility: visible;
+}
+
+.go-top img {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.go-top:hover {
+  background: #e04d2c;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .info-container {
+    flex-direction: column;
+    align-items: center;
   }
-
-
-
-    .home-container {
-      text-align: center;
-      padding: 0px;
-    }
-    .header-container {
-      margin-bottom: 30px;
-      position: relative;
-      
-    }
-    .header-container h1 {
-      font-size: 36px;
-      padding: 30px;
-      color: #333;
-    }
-    .header-container img {
-      width: 100%;
-      max-width: 100%;
-      max-height: 800px;
-      object-fit: cover;
-      border-radius: 0px;
-    }
-    .content-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      padding: 20px;
-    }
-    .image-container img {
-      
-      width: 800px;
-      left: 0px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .slogan-div {
-      position: absolute;
-      margin: 200px;
-      top: 25%;
-    }
-    .slogan-div span{
-      
-      color: white;
-      font-size: 25px;
-      padding: 2px;
-      margin-left: 10px;
-      margin-right: 10px;
-      text-shadow: 2px 2px 4px black;
-      line-height: 28px;
-      letter-spacing: 1px;
-      width: 100%;
-      font-weight: 400;
-      font-family: 'Geo', sans-serif;
-    } 
-    .slogan-div h2{
-      font-weight: normal;
-      text-shadow: rgba(0, 0, 0, 0.2) 1px 0 10px;
-      margin-bottom: 30px;
-      width: 100%;
-      color: white;
-      font-size: 50px;
-      line-height: 28px;
-      letter-spacing: 1px;
-    }   
-    .info-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 20px;
-      max-width: 1600px;
-      margin: 0 auto;
-    }
-
-    /* 📍 Bloc Adresse */
-    .adresse-container {
-      flex: 1;
-      max-width: 300px;
-      text-align: center;
-      padding: 20px;
-      background: #FFFFFF;
-      border-radius: 10px;
-      box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
-    }
-    .adresse-container h1 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-    .adresse-container p {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-    .map-button {
-      display: inline-block;
-      padding: 10px 15px;
-      background: #ff5733;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-    .map-button:hover {
-      background: #e64c29;
-    }
-
-    /* 🏠 Image Emplacement */
-    .image-container img {
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
-    }
-
-    /* 🕰️ Bloc Horaires */
-    .horaires-container {
-      flex: 1;
-      max-width: 300px;
-      background: #FFFFFF;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
-      text-align: left;
-    }
-    .horaires-container h1 {
-      margin-bottom: 15px;
-      font-size: 22px;
-    }
-    .horaires-container ul {
-      list-style: none;
-      padding: 0;
-    }
-    .horaires-container li {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      font-size: 18px;
-      border-bottom: 1px solid #ffffff;
-    }
-    .horaires-container li.ferme {
-      color: #ff1d58;
-      font-weight: bold;
-    }
-      .horizontal-line {
-        border: none;
-        border-top: 3px solid #ddd;
-        margin: 20px 0;
-      }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .info-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .adresse-container, .horaires-container {
-        max-width: 100%;
-        text-align: center;
-      }
-    }
+  .adresse-container,
+  .horaires-container {
+    max-width: 100%;
+    text-align: center;
+  }
+}

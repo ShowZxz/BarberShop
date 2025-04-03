@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/Gallery.css";
 import Contact from "../pages/Contact";
+import BannerPresentation from "../components/BannerPresentation"; 
 
 function Gallery() {
   const images = [
@@ -43,6 +44,7 @@ function Gallery() {
       )}
 
       <Contact />
+      <BannerPresentation /> {/* Ajout de la bannière de présentation */}
     </div>
   );
 }

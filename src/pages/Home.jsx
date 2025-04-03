@@ -3,6 +3,7 @@ import MiniGallery from "../components/MiniGallery";
 import Contact from "../pages/Contact";
 import VideoSection from "../components/VideoSection"; 
 import MentionLegal from "../components/MentionLegal";
+import { useState, useEffect } from "react";
 import "../styles/Home.css";
 function Home() {
   const horaires = [
@@ -32,6 +33,29 @@ const spanVariants = {
     exit: {x: '-100vw', transition: { ease: 'easeInOut' } }
 };
 
+const [showButton, setShowButton] = useState(false);
+
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      // Si on a scrollé au moins à 50% de la page
+      console.log("ScrollY:", window.scrollY); // ✅ Test si l'événement est bien déclenché
+      console.log("InnerHeight:", window.innerHeight);
+      if (window.scrollY > window.innerHeight / 2) {
+        setShowButton(true);
+        console.log("➡️ Affichage du bouton !");
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <motion.div className="home-container"
     variants={divVariants}
@@ -49,7 +73,8 @@ const spanVariants = {
         initial="hidden"
         animate="visible"
        
-        >Le Bink's Barbershop</motion.h1>
+        >Bink's Barbershop</motion.h1>
+        <h2>Barber</h2>
         <div className="slogan-div">
 
         <motion.h2 className="phrase"
@@ -125,6 +150,13 @@ const spanVariants = {
       <hr className="horizontal-line" />
       <div className="contact-class"><Contact /></div>
       <div className="mention-legal"><MentionLegal/></div>
+
+      {showButton && (
+        <a className={`go-top ${showButton ? "show" : ""}`} href="#top">
+          <img src="/images/upload.png" alt="Retour en haut" />
+        </a>
+
+      )}
       
     </motion.div>
     
