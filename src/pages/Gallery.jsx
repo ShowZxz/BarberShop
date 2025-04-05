@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "../styles/Gallery.css";
 import Contact from "../pages/Contact";
-import BannerPresentation from "../components/BannerPresentation"; 
+import BannerPresentation from "../components/BannerPresentation";
+import Horaire from "../components/Horaire";
+import Location from "../components/Location";
 
 function Gallery() {
   const images = [
@@ -32,7 +34,6 @@ function Gallery() {
           ))}
         </div>
       </div>
-
       {/* Modale qui s'affiche si une image est sélectionnée */}
       {selectedImage && (
         <div className="modal-overlay" onClick={() => setSelectedImage(null)}>
@@ -42,9 +43,10 @@ function Gallery() {
           </div>
         </div>
       )}
-
       <Contact />
       <BannerPresentation /> {/* Ajout de la bannière de présentation */}
+      <Horaire /> {/* Ajout de l'horaire */}
+      <Location /> {/* Ajout de la localisation */}
     </div>
   );
 }

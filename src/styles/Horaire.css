@@ -1,0 +1,83 @@
+.horaire-container {
+  background-color: #111;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+.horaire-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.date-jour {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.logo-horaire {
+  width: 30px;
+  filter: brightness(0) invert(1);
+  margin-bottom: 10px;
+}
+
+.horaire-title {
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.horaire-description {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.horaire-item {
+  background-color: #1b1b1b;
+  padding: 15px 20px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.horaire-item:hover {
+  transform: scale(1.05);
+}
+
+.horaire-item.active {
+  background-color: #fff;
+  color: #111;
+}
+
+.horaire-item h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.horaire-item h4 {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.horaire-item p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.aujourdhui {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #f0c000;
+  box-shadow: 0 0 10px #f0c000;
+  transform: scale(1.05);
+  transition: 0.3s;
+}

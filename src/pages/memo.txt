@@ -45,3 +45,12 @@ Gallery :
 Services :
 - option facile display l'image retravaillé de leurs services *
 - option hard https://thebarbercompany.fr/nos-prestations/*
+
+
+
+Reste a faire : 
+- Horraire ouverture *
+- Ou nous trouver
+- Diapo image du salon NOOOOOOOO
+- Dans la nav retirer Contact ou avis  
+- responsives
