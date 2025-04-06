@@ -5,15 +5,27 @@ function Reviews() {
   // Charger les avis depuis localStorage au démarrage
   const [reviews, setReviews] = useState(() => {
     const savedReviews = localStorage.getItem("reviews");
-    return savedReviews ? JSON.parse(savedReviews) : [
-      { name: "Alice", rating: 5, comment: "Super salon ! Coupe parfaite." },
-      { name: "Jean", rating: 4, comment: "Très pro, je recommande." }
-    ];
+    return savedReviews
+      ? JSON.parse(savedReviews)
+      : [
+          {
+            name: "Alice",
+            rating: 5,
+            comment: "Super salon ! Coupe parfaite.",
+          },
+          { name: "Jean", rating: 4, comment: "Très pro, je recommande." },
+        ];
   });
 
-  const [newReview, setNewReview] = useState({ name: "", rating: 5, comment: "" });
+  const [newReview, setNewReview] = useState({
+    name: "",
+    rating: 5,
+    comment: "",
+  });
   const [showAll, setShowAll] = useState(false); // Permet d'afficher tous les avis ou non
-  const [lastReviewTime, setLastReviewTime] = useState(localStorage.getItem("lastReviewTime") || 0);
+  const [lastReviewTime, setLastReviewTime] = useState(
+    localStorage.getItem("lastReviewTime") || 0
+  );
 
   // Mettre à jour localStorage quand les avis changent
   useEffect(() => {
@@ -52,7 +64,9 @@ function Reviews() {
       {/* Liste des avis */}
       {(showAll ? reviews : reviews.slice(0, 5)).map((review, index) => (
         <div key={index} className="review-card">
-          <h3>{review.name} - {"⭐".repeat(review.rating)}</h3>
+          <h3>
+            {review.name} - {"⭐".repeat(review.rating)}
+          </h3>
           <p>{review.comment}</p>
         </div>
       ))}
@@ -67,16 +81,32 @@ function Reviews() {
       {/* Formulaire pour ajouter un avis */}
       <h2>Laissez un avis</h2>
       <form onSubmit={handleSubmit} className="review-form">
-        <input type="text" name="name" placeholder="Votre nom" value={newReview.name} onChange={handleChange} required />
+        <input
+          type="text"
+          name="name"
+          placeholder="Votre nom"
+          value={newReview.name}
+          onChange={handleChange}
+          required
+        />
         <select name="rating" value={newReview.rating} onChange={handleChange}>
           {[5, 4, 3, 2, 1].map((num) => (
-            <option key={num} value={num}>{num} ⭐</option>
+            <option key={num} value={num}>
+              {num} ⭐
+            </option>
           ))}
         </select>
-        <textarea name="comment" placeholder="Votre avis" value={newReview.comment} onChange={handleChange} required />
-        <button type="submit" className="submit-btn">Envoyer</button>
+        <textarea
+          name="comment"
+          placeholder="Votre avis"
+          value={newReview.comment}
+          onChange={handleChange}
+          required
+        />
+        <button type="submit" className="submit-btn">
+          Envoyer
+        </button>
       </form>
-
     </div>
   );
 }
