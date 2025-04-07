@@ -5,37 +5,76 @@ const app = express();
 const PORT = 5000;
 
 const filePath = "./data/avis.json";
+const bannedWordsPath = "./data/banword.txt";
 
 app.use(cors());
 app.use(express.json());
 
+const loadBannedWords = () => {
+  const data = fs.readFileSync(bannedWordsPath, "utf8");
+  return data.split("\n").map((word) => word.trim().toLowerCase());
+};
+
+const bannedWords = loadBannedWords();
+
 // ➕ Ajouter un avis
 app.post("/api/avis", (req, res) => {
-  const { pseudo, message } = req.body;
-  if (!pseudo || !message) {
+  console.log("Requête POST reçue avec :", req.body); // 👈 Debug 1
+
+  const { pseudo, message, rating } = req.body;
+    console.log("Reçu :", pseudo, message, rating);
+  if (!pseudo || !message || !rating) {
+    console.log("❌ Champs manquants :", { pseudo, message, rating }); // 👈 Debug 2
     return res.status(400).json({ error: "Champs manquants" });
   }
+  const containsBannedWord = bannedWords.some((word) =>
+    message.toLowerCase().includes(word) || pseudo.toLowerCase().includes(word)
+  
+  );
 
-  const avisData = JSON.parse(fs.readFileSync(filePath, "utf8"));
-  const newAvis = {
-    id: Date.now(),
-    pseudo,
-    message,
-    rating,
-    date: new Date().toISOString(),
-  };
+  if (containsBannedWord) {
+    console.log("❌ Message contient un mot interdit :", message, pseudo);
+    return res.status(400).json({ error: "Votre message ou pseudo contient des mots interdits." });
+  }
+  
+  try {
+    const avisData = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    console.log("Données d'avis lues :", avisData); // 👈 Debug 3
+    const newAvis = {
+      id: Date.now(),
+      pseudo,
+      message,
+      rating,
+      date: new Date().toISOString(),
+    };
 
-  avisData.push(newAvis);
-  fs.writeFileSync(filePath, JSON.stringify(avisData, null, 2));
+    avisData.push(newAvis);
 
-  res.status(201).json({ message: "Avis ajouté", avis: newAvis });
+    fs.writeFileSync(filePath, JSON.stringify(avisData, null, 2));
+
+    console.log("✅ Avis ajouté :", newAvis);
+
+    return res.status(201).json({ message: "Avis ajouté", avis: newAvis }); // Ajout du return
+  } catch (error) {
+    console.error("Erreur lors de l'écriture du fichier :", error);
+    return res.status(500).json({ error: "Erreur interne du serveur" }); // Ajout du return
+  }
 });
+
 
 // 📥 Lire tous les avis triés du plus récent au plus ancien
 app.get("/api/avis", (req, res) => {
   const avisData = JSON.parse(fs.readFileSync(filePath, "utf8"));
   const sortedAvis = avisData.sort((a, b) => new Date(b.date) - new Date(a.date));
-  res.json(sortedAvis);
+  const recentAvis = sortedAvis.slice(0, 5); // Récupère les 10 premiers avis
+  res.json(recentAvis);
+});
+
+app.get("/api/avis/recent", (req, res) => {
+  const avisData = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  const sortedAvis = avisData.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const recentAvis = sortedAvis.slice(0, 3); // Récupère les 3 premiers avis les plus récents
+  res.json(recentAvis);
 });
 
 // 🗑️ Supprimer un avis (optionnel, si tu veux l'utiliser plus tard)

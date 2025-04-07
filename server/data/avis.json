@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": 1,
+    "pseudo": "Sam",
+    "message": "Super accueil et coupe propre !",
+    "date": "2025-04-02T10:45:00Z",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "pseudo": "Alex",
+    "message": "Ambiance agréable et équipe sympathique.",
+    "date": "2025-04-03T12:30:00Z"
+  },
+  {
+    "id": 3,
+    "pseudo": "Marie",
+    "message": "Je suis très satisfaite de ma coupe !",
+    "date": "2025-04-04T14:15:00Z"
+  },
+  {
+    "id": 4,
+    "pseudo": "Lucas",
+    "message": "Un peu d'attente, mais ça valait le coup.",
+    "rating": "3",
+    "date": "2025-04-05T16:00:00Z"
+  },
+  {
+    "id": 1744023606083,
+    "pseudo": "Emilie",
+    "message": "Le meilleur salon de coiffure de la ville !",
+    "rating": "5",
+    "date": "2025-04-06T18:45:00Z"
+  },
+  {
+    "id": 1744023406083,
+    "pseudo": "Vayne",
+    "message": "HVJHVH",
+    "rating": "4",
+    "date": "2025-04-07T10:56:46.083Z"
+  }
+]

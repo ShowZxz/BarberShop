@@ -1,58 +1,83 @@
 .reviews-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px auto;
-    max-width: 1000px;
-    max-height: 1000px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 1000px;
+  max-height: 2200px;
+  padding: 20px;
 
-.review-card {
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .delete-btn {
-    background: red;
-    color: white;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-  }
-  .toggle-btn {
-    background: #8B0000;
-    color: white;
-    padding: 8px;
-    border: none;
-    cursor: pointer;
-    margin: 10px 0;
-  }
-  .review-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  .review-form input, .review-form select, .review-form textarea {
-    margin-bottom: 10px;
-    padding: 8px;
-  }
-  .submit-btn {
-    background: #8B0000;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-  }
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.avis-item {
+  margin: 10px 0;
+}
+.avis-item p {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.avis-item small {
+  text-align: right;
+}
+.review-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+  margin-bottom: 10px;
+  padding: 8px;
+}
+.submit-btn {
+  background: #8b0000;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.avis-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.avis-form input,
+.avis-form textarea,
+.avis-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  border-radius: 5px;
+  width: 500px;
+}
+
+.avis-form textarea {
+  height: 200px;
+  resize: none; /* Empêche le redimensionnement de la zone de texte */
+}
+
+.avis-form button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
+}

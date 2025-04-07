@@ -1,10 +1,7 @@
 import { useState } from "react";
 import "../styles/Gallery.css";
 import Contact from "../pages/Contact";
-import BannerPresentation from "../components/BannerPresentation";
-import Horaire from "../components/Horaire";
-import Location from "../components/Location";
-
+import VideoSection from "../components/VideoSection";
 function Gallery() {
   const images = [
     { src: "/images/coupe1.jpg", name: "Dégradé Américain" },
@@ -20,6 +17,7 @@ function Gallery() {
 
   return (
     <div className="base-container">
+      <VideoSection />
       <div className="gallery-container">
         <div className="gallery-grid">
           {images.map((image, index) => (
@@ -44,9 +42,6 @@ function Gallery() {
         </div>
       )}
       <Contact />
-      <BannerPresentation /> {/* Ajout de la bannière de présentation */}
-      <Horaire /> {/* Ajout de l'horaire */}
-      <Location /> {/* Ajout de la localisation */}
     </div>
   );
 }

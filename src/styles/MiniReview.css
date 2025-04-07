@@ -1,0 +1,65 @@
+.mini-review {
+  padding: 20px;
+  background-color: #333030;
+}
+
+.mini-review h1 {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.avis-container {
+  display: flex;
+  flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+  gap: 40px; /* Espacement entre les avis */
+  justify-content: center; /* Centrer les avis horizontalement */
+}
+
+.avis-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: 400px; /* Largeur fixe pour chaque avis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.avis-pseudo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.avis-message {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.avis-date {
+  font-size: 14px;
+  color: #888;
+  text-align: right;
+}
+
+.rating {
+  color: #f39c12; /* Couleur pour les étoiles */
+}
+
+.avis-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.avis-button {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
