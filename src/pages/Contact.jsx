@@ -1,14 +1,18 @@
 import { Facebook, Instagram, Mail } from "lucide-react"; // Pas d'icône Snapchat, on enlève l'import
 import "../styles/Contact.css";
+import { FaSnapchatGhost, FaPhoneAlt } from "react-icons/fa";
 function Contact() {
   return (
     <div className="contact-container">
-      <h1>Contactez-nous</h1>
+      <img className="contact-logo" src="/vite.svg" />
+      <h1 className="contact-title">Contactez-nous</h1>
       <div className="social-email">
         <Mail size={24} className="icon-mail" />
-        <span className="email">Adresse@mail.com </span>
+        <a href="mailto:Adresse@mail.com" className="email">
+          Adresse@mail.com
+        </a>
       </div>
-      <p>Suivez-nous sur nos réseaux sociaux :</p>
+      <p className="follow">Suivez-nous sur nos réseaux sociaux :</p>
       <div className="social-buttons">
         {/* Facebook */}
         <a
@@ -32,21 +36,24 @@ function Contact() {
 
         {/* Snapchat (Image SVG à la place) */}
         <div className="social-btn snapchat">
-          <img
-            src="/images/Snapchat.png"
-            alt="Snapchat"
-            className="snap-icon"
-          />
-          <span className="snap-username">@lebinks.barber</span>
+          <a
+            href="https://snapchat.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="snapchat-link"
+          >
+            <FaSnapchatGhost className="snap-icon" />
+
+            <span className="snap-username">@lebinks.barber</span>
+          </a>
         </div>
         {/* Phone */}
         <div className="social-btn phone">
-          <img
-            src="/images/mobile.png"
-            alt="Téléphone"
-            className="phone-icon"
-          />
-          <span className="phonenumber">01.87.90.05.97</span>
+          <a href="tel:+33123456789" className="phone-link">
+            <FaPhoneAlt className="phone-icon" />
+
+            <span className="phonenumber">01.87.90.05.97</span>
+          </a>
         </div>
       </div>
     </div>

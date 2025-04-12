@@ -1,10 +1,11 @@
 .mini-review {
   padding: 20px;
-  background-color: #333030;
+  background-color: hsla(30.81081081, 40.2173913%, 63.92156863%, 1);
 }
 
 .mini-review h1 {
   text-align: center;
+  color: #fff;
   font-size: 35px;
   margin-bottom: 20px;
 }
@@ -55,8 +56,8 @@
   margin-top: 10px;
 }
 .avis-button {
-  background-color: #f39c12;
-  color: white;
+  background-color: black;
+  color: hsla(30.81081081, 40.2173913%, 63.92156863%, 1);
   border: none;
   padding: 10px 20px;
   border-radius: 5px;

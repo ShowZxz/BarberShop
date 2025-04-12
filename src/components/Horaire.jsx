@@ -47,8 +47,8 @@ function Horaire() {
     {
       jour: "Dimanche",
       open: "Ouverture",
-      heuresOpen: "Fermé",
-      heuresClose: "Fermé",
+      heuresOpen: "12:00",
+      heuresClose: "18:00",
       close: "Fermeture",
     },
   ];

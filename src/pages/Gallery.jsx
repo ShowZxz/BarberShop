@@ -17,7 +17,11 @@ function Gallery() {
 
   return (
     <div className="base-container">
-      <VideoSection />
+      <div className="vid-section">
+        {/* Section vidéo en arrière-plan avec texte */}
+        <VideoSection />
+      </div>
+
       <div className="gallery-container">
         <div className="gallery-grid">
           {images.map((image, index) => (

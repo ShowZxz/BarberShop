@@ -1,0 +1,30 @@
+.mentions-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+.mentions-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.mentions-container section {
+  margin-bottom: 30px;
+}
+
+.mentions-container h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.mentions-container p {
+  font-size: 16px;
+  color: #444;
+  margin: 4px 0;
+}

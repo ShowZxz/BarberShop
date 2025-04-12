@@ -1,22 +1,12 @@
 
-Reste a faire : 
-- Horraire ouverture *
-- Ou nous trouver
-- Diapo image du salon NOOOOOOOO
-- Dans la nav retirer Contact ou avis  
+Reste a faire :
+- animation 
 - responsives
-- Rework coté front reviews 80%
-- animation
-- couleur 
-- taille
+
 
 Home : 
-redimensionner la banner
-descendre l'horraire
-ajouté un fond a ou nous trouver et mini gallery
-couleur de miniReview
+Mention Legale Footer
 
-btn go top couleur
 
 Services : 
 redimensionner topService
@@ -28,13 +18,6 @@ redimensionner (margin)
 Les text size
 ajout du title
 background text et background de la gallery ?
-
-Avis : 
-Couleur
-delais post ou post unique
-
-Footer : 
-page contact : link adresse mail /btn snap/btn phone + couleur
 
 Mention legale :
 ???????????

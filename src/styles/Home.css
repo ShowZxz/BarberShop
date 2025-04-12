@@ -15,7 +15,7 @@
 .home-container {
   text-align: center;
   padding: 0px;
-  margin-top: 70px;
+  margin-top: 60px;
 }
 .go-top {
   position: fixed;
@@ -37,7 +37,7 @@
 .go-top.show {
   opacity: 1;
   transition-delay: 2s;
-  background-color: #ff1d58;
+  background-color: goldenrod;
   visibility: visible;
 }
 
@@ -49,4 +49,8 @@
 
 .go-top:hover {
   background: #e04d2c;
+}
+
+html {
+  scroll-behavior: smooth;
 }

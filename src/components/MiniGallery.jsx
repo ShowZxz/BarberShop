@@ -25,18 +25,19 @@ function MiniGallery() {
 
   return (
     <div className="mini-gallery">
-      <h2>Notre galerie</h2>
+      <h2>Notre galerie 📸</h2>
       <p>Découvrez nos dernières créations</p>
       <button className="nav-button left" onClick={prevSlide}>
-        
         <ChevronLeft size={30} />
       </button>
 
       <div className="image-slider">
         {images.slice(index, index + 3).map((img, i) => (
           <div key={i} className="image-cont">
-            <motion.img src={img.src} alt={img.title} 
-            whileHover={{ scale: 1.05}}
+            <motion.img
+              src={img.src}
+              alt={img.title}
+              whileHover={{ scale: 1.05 }}
             />
             <h3>{img.title}</h3>
           </div>
@@ -50,8 +51,6 @@ function MiniGallery() {
       <button className="view-more" onClick={() => navigate("/gallery")}>
         Voir plus
       </button>
-
-      
     </div>
   );
 }

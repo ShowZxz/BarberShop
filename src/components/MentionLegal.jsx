@@ -2,12 +2,11 @@ function MentionLegal({ mention }) {
   return (
     <div className="mention-legal">
       <p>
-        mention.name is a registered trademark of mention.owner. All rights
-        reserved.
+        mention.name est une marque déposée de mention.owner. Tous droits
+        réservés.
       </p>
       <p>
-        For more information, please visit the official website at{' '}
-
+        Pour plus d'informations, veuillez visiter le site officiel à l'adresse
       </p>
     </div>
   );

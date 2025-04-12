@@ -56,12 +56,11 @@ function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Si on a scrollé au moins à 50% de la page
-      console.log("ScrollY:", window.scrollY); // ✅ Test si l'événement est bien déclenché
-      console.log("InnerHeight:", window.innerHeight);
+      //console.log("ScrollY:", window.scrollY);
+      //console.log("InnerHeight:", window.innerHeight);
       if (window.scrollY > window.innerHeight / 2) {
         setShowButton(true);
-        console.log("➡️ Affichage du bouton !");
+        //console.log("➡️ Affichage du bouton !");
       } else {
         setShowButton(false);
       }
@@ -76,15 +75,16 @@ function Home() {
 
   return (
     <motion.div className="home-container" variants={divVariants} exit="exit">
-      {/* Section Emplacement & Horaires */}
       <BannerPresentation />
-      <Horaire /> {/* Affichage des horaires */}
-      <Location /> {/* Affichage de la carte */}
-      {/* Affichage de la bannière de présentation */}
+
+      <Horaire />
+
+      <Location />
+
       <div className="mini-gallery">
-        <MiniGallery /> {/* Affichage de la mini galerie */}
+        <MiniGallery />
       </div>
-      <MiniReview /> {/* Affichage de la mini review */}
+      <MiniReview />
       <div className="contact-class">
         <Contact />
       </div>
