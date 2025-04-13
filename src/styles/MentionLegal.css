@@ -1,0 +1,40 @@
+.mention-legal {
+  padding: 10px;
+  margin: 0px auto;
+  max-width: 100%;
+  background-color: hsla(30.81081081, 40.2173913%, 63.92156863%, 1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.mention-legal p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+/* Bouton */
+.btn-mention-legal {
+  background-color: #e67e22;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Effet au survol du bouton */
+.btn-mention-legal:hover {
+  background-color: #d35400;
+  transform: scale(1.05);
+}
+
+/* Conteneur du bouton */
+.ml-footer-btn {
+  margin-top: 20px;
+  text-align: center;
+}

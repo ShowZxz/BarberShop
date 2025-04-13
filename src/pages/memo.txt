@@ -9,22 +9,19 @@ Mention Legale Footer
 
 
 Services : 
-redimensionner topService
-redimensionner les images ( avoir)
-ajout du footer
+
 
 Gallery :
-redimensionner (margin)
-Les text size
 ajout du title
-background text et background de la gallery ?
+
 
 Mention legale :
 ???????????
 Mention legale 
 Créateur moi
 
-
+Idée : 
+Recent post instagram (visualiser)
 
 A fournir : 
 Logo entreprise

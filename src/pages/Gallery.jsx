@@ -2,6 +2,8 @@ import { useState } from "react";
 import "../styles/Gallery.css";
 import Contact from "../pages/Contact";
 import VideoSection from "../components/VideoSection";
+import { motion } from "framer-motion";
+import DownGallerySection from "../components/DownGallerySection";
 function Gallery() {
   const images = [
     { src: "/images/coupe1.jpg", name: "Dégradé Américain" },
@@ -45,6 +47,7 @@ function Gallery() {
           </div>
         </div>
       )}
+      <DownGallerySection />
       <Contact />
     </div>
   );

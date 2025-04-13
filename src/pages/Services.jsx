@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import "../styles/Services.css";
 import { Link } from "react-router-dom";
 import TopServicesSection from "../components/TopServicesSection";
+import Contact from "../pages/Contact";
 
 const categories = {
   Cheveux: [
@@ -11,7 +12,7 @@ const categories = {
     { name: "Coupe enfant (-12 ans)", price: "10€" },
     { name: "Contours", price: "5€" },
     { name: "Motif", price: "(à partir de) 5€" },
-    { name: "Raie", price: "OFFERT" }
+    { name: "Raie", price: "OFFERT" },
   ],
   Soins: [
     { name: "Défrisage", price: "10€" },
@@ -20,23 +21,21 @@ const categories = {
     { name: "Coloration", price: "(à partir de) 10€" },
     { name: "Polar white", price: "(à partir de) 50€" },
     { name: "Black masque", price: "7€" },
-    { name: "Serviette chaude", price: "5€" }
+    { name: "Serviette chaude", price: "5€" },
   ],
-  Barbe: [
-    { name: "Rasage complet", price: "10€" }
-  ],
+  Barbe: [{ name: "Rasage complet", price: "10€" }],
   Formules: [
     { name: "Coupe + Barbe", price: "20€" },
     { name: "Coupe + motif", price: "20€" },
-    { name: "Rasage cranien + Barbe", price: "15€" }
-  ]
+    { name: "Rasage cranien + Barbe", price: "15€" },
+  ],
 };
 
 const categoryImages = {
   Cheveux: "/images/coupe1.jpg",
   Soins: "/images/coupe1.jpg",
   Barbe: "/images/coupe1.jpg",
-  Formules: "/images/coupe1.jpg"
+  Formules: "/images/coupe1.jpg",
 };
 
 function Services() {
@@ -48,7 +47,11 @@ function Services() {
       exit={{ opacity: 0, y: -50, transition: { duration: 0.5 } }}
     >
       <TopServicesSection />
-
+      <div className="services-header">
+        <img src="/images/Divider.png" alt="divider" />
+        <h1>Les menus</h1>
+        <p>Découvrez nos services de coiffure et de soins capillaires.</p>
+      </div>
       <div className="services-grid">
         {Object.entries(categories).map(([category, items]) => (
           <div key={category} className="category-card">
@@ -68,12 +71,30 @@ function Services() {
                 ))}
               </ul>
               <Link to="/gallery">
-              <button className="discover-btn">DÉCOUVRIR</button>
+                <button className="discover-btn">DÉCOUVRIR</button>
               </Link>
             </div>
           </div>
         ))}
       </div>
+      <div className="services-footer">
+        <hr />
+        <div className="services-footer-container">
+          <h1>Nos Créations</h1>
+          <p>
+            Découvrez nôtre magnifique gallery avec toutes nos créations pour
+            vous faire une idée
+          </p>
+          <div className="services-footer-btn">
+            <Link to="/gallery">
+              <button className="discover-footer-btn">
+                Gallerie du Bink's
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+      <Contact />
     </motion.div>
   );
 }
