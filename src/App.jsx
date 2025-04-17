@@ -27,7 +27,12 @@ function App() {
         <motion.ul
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
+          transition={{
+            delay: 1,
+            type: "spring",
+            stiffness: 50,
+            duration: 1,
+          }}
         >
           <li>
             <Link to="/">Accueil</Link>

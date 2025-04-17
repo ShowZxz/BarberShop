@@ -6,9 +6,9 @@ function DownGallerySection() {
     <div className="services-footer">
       <hr />
       <div className="services-footer-container">
-        <h1>Nos Créations</h1>
+        <h1>Nos Services</h1>
         <p>
-          Découvrez nôtre magnifique gallery avec toutes nos créations pour vous
+          Découvrez de magnifique services avec toutes nos formule pour vous
           faire une idée
         </p>
         <div className="services-footer-btn">

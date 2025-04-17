@@ -80,6 +80,10 @@
 .banner-slogan {
   font-size: 1.5rem;
   font-style: italic;
+  color: #333;
+  display: inline-block; /* Permet d'aligner les lettres */
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 /* Zone de droite (Vidéo) */
@@ -153,4 +157,16 @@
     font-size: 2rem; /* Réduit la taille du texte */
     margin-bottom: 15px; /* Réduit l'espacement */
   }
+}
+
+.animated-text {
+  display: inline-block;
+  white-space: wrap;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #ffffff;
+}
+
+.animated-text span {
+  display: inline-block;
 }

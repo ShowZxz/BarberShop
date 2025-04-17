@@ -1,6 +1,29 @@
+import { useEffect, useRef, useState } from "react";
 import "../styles/Horaire.css";
 
 function Horaire() {
+  const [isVisible, setIsVisible] = useState(false);
+  const horaireRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting); // Met à jour l'état si visible
+      },
+      { threshold: 0.5 } // Déclenche si 50% du composant est visible
+    );
+
+    if (horaireRef.current) {
+      observer.observe(horaireRef.current);
+    }
+
+    return () => {
+      if (horaireRef.current) {
+        observer.unobserve(horaireRef.current);
+      }
+    };
+  }, []);
+
   const horaires = [
     {
       jour: "Lundi",
@@ -53,8 +76,6 @@ function Horaire() {
     },
   ];
 
-  const jourActuel = "Lundi"; // tu peux aussi utiliser new Date().getDay() si tu veux le jour réel
-
   const aujourdhui = new Date().toLocaleDateString("fr-FR", {
     weekday: "long",
     day: "numeric",
@@ -66,7 +87,7 @@ function Horaire() {
   const indexJour = aujourdHuiIndex === 0 ? 6 : aujourdHuiIndex - 1;
 
   return (
-    <div className="horaire-container">
+    <div className="horaire-container" ref={horaireRef}>
       <div className="horaire-top">
         <img
           src="/images/lhorloge.png"
@@ -82,7 +103,11 @@ function Horaire() {
           <div
             key={index}
             className={`horaire-item ${
-              index === indexJour ? "aujourdhui" : ""
+              index === indexJour
+                ? isVisible
+                  ? "aujourdhui clignote"
+                  : "aujourdhui"
+                : ""
             }`}
           >
             <h3>{horaire.jour}</h3>

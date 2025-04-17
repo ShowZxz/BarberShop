@@ -77,8 +77,23 @@
 .aujourdhui {
   background-color: #ffffff;
   color: #000000;
-  border: 2px solid #f0c000;
-  box-shadow: 0 0 10px #f0c000;
+  border: 2px solid #f0c00000;
+  box-shadow: 0 0 10px #f0c00000;
   transform: scale(1.05);
-  transition: 0.3s;
+  transition: 0.3s ease;
+}
+
+.clignote {
+  animation: clignoter 2s infinite; /* Animation infinie */
+}
+
+@keyframes clignoter {
+  0%,
+  100% {
+    background-color: #ffffff; /* Couleur de départ et de fin */
+  }
+  50% {
+    border: 2px solid #f0c000;
+    box-shadow: 0 0 10px #f0c000; /* Couleur intermédiaire */
+  }
 }

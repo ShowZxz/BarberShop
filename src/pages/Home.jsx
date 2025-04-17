@@ -1,27 +1,16 @@
 import { motion } from "framer-motion";
 import MiniGallery from "../components/MiniGallery";
 import Contact from "../pages/Contact";
-import VideoSection from "../components/VideoSection";
 import MentionLegal from "../components/MentionLegal";
 import BannerPresentation from "../components/BannerPresentation";
 import Horaire from "../components/Horaire";
 import Location from "../components/Location";
 import MiniReview from "../components/MiniReview";
+
 import { useState, useEffect } from "react";
 import "../styles/Home.css";
-function Home() {
-  const horaires = [
-    { jour: "Lundi", heures: "Fermé" },
-    { jour: "Mardi", heures: "09:00 - 19:00" },
-    { jour: "Mercredi", heures: "09:00 - 19:00" },
-    { jour: "Jeudi", heures: "09:00 - 19:00" },
-    { jour: "Vendredi", heures: "09:00 - 19:00" },
-    { jour: "Samedi", heures: "10:00 - 18:00" },
-    { jour: "Dimanche", heures: "Fermé" },
-  ];
-  const paragraphe =
-    "Principium autem unde latius se funditabat, emersit ex negotio tali. Chilo ex vicario et coniux eius Maxima nomine, questi apud Olybrium ea tempestate urbi praefectum, vitamque suam venenis petitam adseverantes inpetrarunt ut hi, quos suspectati sunt, ilico rapti conpingerentur in vincula, organarius Sericus et Asbolius palaestrita et aruspex Campensis.";
 
+function Home() {
   const headerVariants = {
     hidden: { opacity: 0, scale: 1 },
     visible: {
@@ -32,15 +21,23 @@ function Home() {
     exit: { x: "-100vw", transition: { ease: "easeInOut" } },
   };
   const divVariants = {
-    hidden: { x: "-100vw" },
+    hidden: { opacity: 0, x: "120vw", filter: "blur(20px)" },
     visible: {
+      opacity: 1,
       x: 0,
-      transition: { duration: 2, delay: 0.3, type: "spring", stiffness: 30 },
+      filter: "blur(0px)",
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+        type: "tween",
+        stiffness: 30,
+      },
     },
     exit: {
-      x: "-100vw",
       opacity: 0,
-      transition: { ease: "easeInOut", duration: 0.5, delay: 0.3 },
+      x: "-100vw",
+      filter: "blur(10px)",
+      transition: { duration: 0.8, ease: "easeInOut" },
     },
   };
   const spanVariants = {
@@ -74,7 +71,13 @@ function Home() {
   }, []);
 
   return (
-    <motion.div className="home-container" variants={divVariants} exit="exit">
+    <motion.div
+      className="home-container"
+      variants={divVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       <BannerPresentation />
 
       <Horaire />

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "../styles/MiniGallery.css";
@@ -12,8 +12,30 @@ const images = [
 ];
 
 function MiniGallery() {
+  const [isVisible, setIsVisible] = useState(false);
+  const miniGalleryRef = useRef(null);
+
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting); // Met à jour l'état si visible
+      },
+      { threshold: 0.5 } // Déclenche si 50% du composant est visible
+    );
+
+    if (miniGalleryRef.current) {
+      observer.observe(miniGalleryRef.current);
+    }
+
+    return () => {
+      if (miniGalleryRef.current) {
+        observer.unobserve(miniGalleryRef.current);
+      }
+    };
+  }, []);
 
   const nextSlide = () => {
     setIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -23,21 +45,46 @@ function MiniGallery() {
     setIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
+  const titleVariants = {
+    hidden: { scale: 0 },
+    visible: {
+      scale: [1, 1.1, 1, 1.1, 1],
+      transition: { duration: 1, ease: "easeInOut" },
+    },
+  };
+
+  const fadeVariants = {
+    hidden: { opacity: 0, clipPath: "inset(0 100% 0 0)" }, // Caché à droite
+    visible: {
+      opacity: 1,
+      clipPath: "inset(0 0 0 0)", // Révélé complètement
+      transition: { duration: 1, ease: "easeInOut" },
+    },
+  };
   return (
-    <div className="mini-gallery">
-      <h2>Notre galerie 📸</h2>
+    <div className="mini-gallery" ref={miniGalleryRef}>
+      <motion.h2
+        variants={titleVariants}
+        initial="hidden"
+        animate={isVisible ? "visible" : "hidden"}
+      >
+        Notre galerie 📸
+      </motion.h2>
       <p>Découvrez nos dernières créations</p>
       <button className="nav-button left" onClick={prevSlide}>
         <ChevronLeft size={30} />
       </button>
 
-      <div className="image-slider">
+      <div className="image-slider" ref={miniGalleryRef}>
         {images.slice(index, index + 3).map((img, i) => (
           <div key={i} className="image-cont">
             <motion.img
               src={img.src}
               alt={img.title}
               whileHover={{ scale: 1.05 }}
+              variants={fadeVariants}
+              initial="hidden"
+              animate={isVisible ? "visible" : "hidden"}
             />
             <h3>{img.title}</h3>
           </div>
@@ -48,9 +95,14 @@ function MiniGallery() {
         <ChevronRight size={30} />
       </button>
 
-      <button className="view-more" onClick={() => navigate("/gallery")}>
+      <motion.button
+        className="view-more"
+        onClick={() => navigate("/gallery")}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
         Voir plus
-      </button>
+      </motion.button>
     </div>
   );
 }
