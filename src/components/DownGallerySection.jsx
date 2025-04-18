@@ -1,5 +1,6 @@
 import "../styles/DownGallerySection.css";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function DownGallerySection() {
   return (
@@ -13,7 +14,13 @@ function DownGallerySection() {
         </p>
         <div className="services-footer-btn">
           <Link to="/services">
-            <button className="discover-footer-btn">Nos Services</button>
+            <motion.button
+              className="discover-footer-btn"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Nos Services
+            </motion.button>
           </Link>
         </div>
       </div>

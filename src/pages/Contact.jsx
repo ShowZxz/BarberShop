@@ -1,10 +1,29 @@
 import { Facebook, Instagram, Mail } from "lucide-react"; // Pas d'icône Snapchat, on enlève l'import
 import "../styles/Contact.css";
 import { FaSnapchatGhost, FaPhoneAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
+
 function Contact() {
+  const logoVariants = {
+    animate: {
+      rotate: [0, 360], // Tourne de 0° à 360°
+      transition: {
+        duration: 2, // Durée d'un tour complet
+        ease: "easeInOut",
+        repeat: Infinity, // Répète l'animation à l'infini
+        repeatDelay: 1, // Pause de 1 seconde entre chaque répétition
+      },
+    },
+  };
+
   return (
     <div className="contact-container">
-      <img className="contact-logo" src="/vite.svg" />
+      <motion.img
+        className="contact-logo"
+        src="/vite.svg"
+        variants={logoVariants}
+        animate="animate"
+      />
       <h1 className="contact-title">Contactez-nous</h1>
       <div className="social-email">
         <Mail size={24} className="icon-mail" />

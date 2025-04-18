@@ -30,25 +30,25 @@
 }
 
 .map-button:hover {
-  background-color: #444;
+  background-color: #000000;
 }
 
 .location-title {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #444;
+  color: #000000;
 }
 .adress-title {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #444;
+  color: #000000;
 }
 
 .adress-text {
   cursor: pointer;
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #444;
+  color: #000000;
   transition: color 0.3s ease;
 }
 

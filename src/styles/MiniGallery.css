@@ -49,7 +49,7 @@
 .image-cont h3 {
   margin-top: 10px;
   font-size: 18px;
-  color: gray;
+  color: rgb(255, 255, 255);
 }
 
 .nav-button {
@@ -66,7 +66,6 @@
 }
 
 .nav-button:hover {
-  background-color: #035c69;
   color: white;
   transform: translateY(-50%) scale(1.1);
   opacity: 0.5;

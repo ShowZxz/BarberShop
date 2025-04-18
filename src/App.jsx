@@ -11,12 +11,15 @@ import PageMentionLegal from "./pages/PageMentionLegal";
 function App() {
   const location = useLocation(); // Déplacement de useLocation() DANS App()
 
-  const imageVariants = {
-    hidden: { rotateZ: 0, scale: 0 },
-    visible: {
-      rotateZ: 360,
-      scale: 1,
-      transition: { duration: 2, type: "spring", stiffness: 30 },
+  const logoVariants = {
+    animate: {
+      rotate: [0, -360, 0, -360],
+      transition: {
+        duration: 4,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatDelay: 3,
+      },
     },
   };
 
@@ -42,7 +45,13 @@ function App() {
           </li>
           <li>
             <Link to="/">
-              <img src="./vite.svg" alt="logo" className="logo" />
+              <motion.img
+                src="./vite.svg"
+                alt="logo"
+                className="logo"
+                variants={logoVariants}
+                animate="animate"
+              />
             </Link>
           </li>
           <li>

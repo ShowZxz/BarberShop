@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import "../styles/Reviews.css";
+import { motion } from "framer-motion";
+import Contact from "../pages/Contact";
+import MentionLegal from "../components/MentionLegal";
 
 function Reviews() {
   const [avis, setAvis] = useState([]);
@@ -98,6 +101,8 @@ function Reviews() {
         </select>
         <button type="submit">Envoyer</button>
       </form>
+      <Contact />
+      <MentionLegal />
     </div>
   );
 }

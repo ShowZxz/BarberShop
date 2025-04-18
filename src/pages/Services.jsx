@@ -3,6 +3,7 @@ import "../styles/Services.css";
 import { Link } from "react-router-dom";
 import TopServicesSection from "../components/TopServicesSection";
 import Contact from "../pages/Contact";
+import MentionLegal from "../components/MentionLegal";
 
 const categories = {
   Cheveux: [
@@ -54,7 +55,12 @@ function Services() {
       </div>
       <div className="services-grid">
         {Object.entries(categories).map(([category, items]) => (
-          <div key={category} className="category-card">
+          <motion.div
+            key={category}
+            className="category-card"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.9 }}
+          >
             {/* Image en haut */}
             <div className="image-services">
               <img src={categoryImages[category]} alt={category} />
@@ -74,7 +80,7 @@ function Services() {
                 <button className="discover-btn">DÉCOUVRIR</button>
               </Link>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       <div className="services-footer">
@@ -87,14 +93,19 @@ function Services() {
           </p>
           <div className="services-footer-btn">
             <Link to="/gallery">
-              <button className="discover-footer-btn">
+              <motion.button
+                className="discover-footer-btn"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 Gallerie du Bink's
-              </button>
+              </motion.button>
             </Link>
           </div>
         </div>
       </div>
       <Contact />
+      <MentionLegal />
     </motion.div>
   );
 }
