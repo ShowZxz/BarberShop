@@ -20,7 +20,7 @@ function Contact() {
     <div className="contact-container">
       <motion.img
         className="contact-logo"
-        src="/vite.svg"
+        src="./images/LOGO_BINKS_BARBERSHOP.png"
         variants={logoVariants}
         animate="animate"
       />

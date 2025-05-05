@@ -100,3 +100,49 @@
 .view-more:hover {
   background-color: grey;
 }
+
+@media (max-width: 768px) {
+  .mini-gallery {
+    padding: 10px; /* Réduit le padding global */
+    gap: 15px;
+  }
+
+  .mini-gallery h2 {
+    font-size: 1.8rem;
+  }
+
+  .mini-gallery p {
+    font-size: 1rem;
+  }
+
+  .image-slider {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .image-cont img {
+    width: 100%;
+    height: auto;
+  }
+
+  .nav-button {
+    width: 30px;
+    height: 30px;
+    top: 45%;
+  }
+
+  .nav-button.left {
+    display: none;
+    left: -20px;
+  }
+
+  .nav-button.right {
+    display: none;
+    right: -20px;
+  }
+
+  .view-more {
+    font-size: 1rem; /* Ajuste légèrement la taille du texte du bouton */
+    padding: 10px 20px; /* Ajuste légèrement le padding du bouton */
+  }
+}

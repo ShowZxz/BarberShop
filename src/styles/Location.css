@@ -55,3 +55,31 @@
 .adress-text:hover {
   color: #007bff;
 }
+
+/* 📱 Responsive pour les petits écrans */
+@media (max-width: 768px) {
+  .location-title {
+    font-size: 2rem; /* Réduit la taille du titre */
+  }
+
+  .adress-title {
+    font-size: 1.2rem; /* Réduit la taille du sous-titre */
+  }
+
+  .adress-text {
+    font-size: 1rem; /* Réduit la taille du texte */
+  }
+
+  .map-button {
+    padding: 8px 16px; /* Réduit la taille du bouton */
+    font-size: 0.9rem; /* Réduit la taille du texte dans le bouton */
+  }
+  .map-container {
+    padding-top: 10%; /* Augmente le ratio pour les petits écrans */
+  }
+
+  .map-container iframe {
+    max-width: 100%; /* L'iframe occupe toute la largeur disponible */
+    max-height: 200px; /* Supprime la limite de hauteur */
+  }
+}

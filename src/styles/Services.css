@@ -78,7 +78,7 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
 .services-container {
-  margin-top: 90px;
+  margin-top: 80px;
 }
 .services-grid {
   display: flex;
@@ -176,5 +176,6 @@
   .services-container {
     flex-direction: column; /* Sur mobile, affichage en colonne */
     align-items: center;
+    margin-top: 50px; /* Réduit l'espace au-dessus des cartes */
   }
 }

@@ -27,6 +27,14 @@ app.post("/api/avis", (req, res) => {
     console.log("❌ Champs manquants :", { pseudo, message, rating }); // 👈 Debug 2
     return res.status(400).json({ error: "Champs manquants" });
   }
+  if (message.length < 10) {
+    console.log("❌ Message trop court :", message); 
+    return res.status(400).json({ error: "Le message doit contenir au moins 10 caractères." });
+  }
+  if (message.length > 500) {
+    console.log("❌ Message trop long :", message);
+    return res.status(400).json({ error: "Le message doit contenir au maximum 500 caractères." });
+  }
   const containsBannedWord = bannedWords.some((word) =>
     message.toLowerCase().includes(word) || pseudo.toLowerCase().includes(word)
   

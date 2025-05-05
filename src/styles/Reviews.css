@@ -2,13 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
-  padding: 20px;
-
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0px;
+  width: 100%;
+  margin-top: 100px;
+  box-sizing: border-box;
 }
-
+.reviews-container h2 {
+  margin-top: 50px;
+}
 .avis-item {
   margin: 10px 0;
 }
@@ -78,4 +80,95 @@
   color: red;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .reviews-container {
+    padding: 10px; /* Réduit le padding global */
+    margin-top: 50px; /* Réduit l'espacement en haut */
+  }
+
+  .reviews-container h1 {
+    font-size: 1.8rem; /* Réduit la taille du titre principal */
+    text-align: center;
+  }
+
+  .avis-list {
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Supprime les puces */
+  }
+
+  .avis-item {
+    padding: 10px;
+    margin: 10px 0;
+    width: 310px;
+    border: 1px solid #ccc; /* Ajoute une bordure pour séparer les avis */
+    border-radius: 5px;
+  }
+
+  .avis-item h3 {
+    font-size: 1.2rem; /* Réduit la taille des titres */
+  }
+
+  .avis-item p {
+    font-size: 1rem; /* Réduit la taille des messages */
+  }
+
+  .avis-item small {
+    font-size: 0.8rem; /* Réduit la taille des dates */
+  }
+
+  .avis-form {
+    width: 100%; /* Le formulaire occupe toute la largeur */
+    max-width: 400px; /* Limite la largeur maximale */
+    margin: 0 auto; /* Centre le formulaire */
+  }
+
+  .avis-form input,
+  .avis-form textarea,
+  .avis-form select {
+    width: 100%; /* Les champs occupent toute la largeur */
+    font-size: 1rem; /* Réduit la taille du texte */
+  }
+
+  .avis-form textarea {
+    height: 150px; /* Réduit la hauteur de la zone de texte */
+  }
+
+  .avis-form button {
+    font-size: 1rem; /* Réduit la taille du texte du bouton */
+    padding: 8px 16px; /* Réduit le padding du bouton */
+  }
+}
+
+@media (max-width: 1024px) {
+  .reviews-container {
+    padding: 0px;
+    margin-top: 100px;
+  }
+
+  .reviews-container h1 {
+    font-size: 2rem; /* Ajuste légèrement la taille du titre principal */
+  }
+
+  .avis-form {
+    width: 90%; /* Le formulaire occupe 90% de la largeur */
+    max-width: 500px; /* Limite la largeur maximale */
+  }
+
+  .avis-form input,
+  .avis-form textarea,
+  .avis-form select {
+    font-size: 1.1rem; /* Ajuste légèrement la taille du texte */
+  }
+
+  .avis-form textarea {
+    height: 180px; /* Ajuste légèrement la hauteur de la zone de texte */
+  }
+
+  .avis-form button {
+    font-size: 1.1rem; /* Ajuste légèrement la taille du texte du bouton */
+    padding: 10px 20px; /* Ajuste légèrement le padding du bouton */
+  }
 }

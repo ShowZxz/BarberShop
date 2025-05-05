@@ -1,5 +1,6 @@
 import "./App.css";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
@@ -9,7 +10,7 @@ import Reviews from "./pages/Reviews";
 import PageMentionLegal from "./pages/PageMentionLegal";
 
 function App() {
-  const location = useLocation(); // Déplacement de useLocation() DANS App()
+  const location = useLocation();
 
   const logoVariants = {
     animate: {
@@ -23,11 +24,20 @@ function App() {
     },
   };
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // État pour le menu
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    console.log("Menu ouvert :", !isMenuOpen);
+  };
   return (
     <div className="haut-section">
-      {/* Navbar avec animation */}
       <nav className="navbar">
+        <button className="hamburger" aria-label="Menu" onClick={toggleMenu}>
+          Bink's Menu ☰
+        </button>
         <motion.ul
+          className={`nav-links ${isMenuOpen ? "active" : ""}`}
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{
@@ -46,7 +56,7 @@ function App() {
           <li>
             <Link to="/">
               <motion.img
-                src="./vite.svg"
+                src="./images/LOGO_BINKS_BARBERSHOP.png"
                 alt="logo"
                 className="logo"
                 variants={logoVariants}
@@ -63,7 +73,6 @@ function App() {
         </motion.ul>
       </nav>
 
-      {/* Animation des transitions de pages */}
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />

@@ -1,6 +1,7 @@
 .contact-container {
   text-align: center;
   background-color: #111;
+  width: 100%;
   padding: 20px;
 }
 .contact-title {
@@ -40,12 +41,13 @@
   background: #4d4d4d;
   color: black;
   width: auto;
-  padding: 0 15px;
+  padding: 0px 15px;
   border-radius: 25px;
 }
 .snapchat-link {
-  display: flex; /* Place les éléments sur la même ligne */
-  align-items: center; /* Aligne verticalement les éléments */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: yellow;
   text-decoration: none;
 }
@@ -115,4 +117,120 @@
 }
 .social-btn:hover {
   transform: scale(1.1);
+}
+
+/* 📱 Responsive pour les petits écrans */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 10px; /* Réduit le padding global */
+  }
+
+  .contact-title {
+    font-size: 24px; /* Réduit la taille du titre */
+    margin: 5px; /* Réduit les marges */
+  }
+
+  .contact-logo {
+    width: 40px; /* Réduit la taille du logo */
+    height: 40px;
+  }
+
+  .social-buttons {
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne */
+    gap: 10px; /* Réduit l'espacement entre les boutons */
+  }
+
+  .social-btn {
+    width: 40px; /* Réduit la taille des boutons */
+    height: 40px;
+  }
+
+  .snapchat {
+    padding: 0px;
+    margin-left: 0px;
+  }
+  .snapchat-link {
+    display: flex; /* Place les éléments sur la même ligne */
+    align-items: center;
+    /* Aligne verticalement les éléments */
+    color: yellow;
+    text-decoration: none;
+  }
+
+  .phone {
+    padding: 0px; /* Réduit le padding du bouton téléphone */
+  }
+
+  .snap-icon {
+    width: 20px; /* Réduit la taille de l'icône */
+    height: 20px;
+    margin: 0; /* Supprime les marges */
+  }
+  .snap-icon,
+  .phone-icon {
+    width: 20px; /* Réduit la taille des icônes */
+    height: 20px;
+  }
+
+  .snap-username,
+  .phonenumber {
+    font-size: 14px; /* Réduit la taille du texte */
+  }
+  .snap-username,
+  .phonenumber {
+    display: none; /* Masque les textes */
+  }
+  .social-email {
+    flex-direction: row; /* Aligne l'icône et l'email horizontalement */
+    justify-content: center;
+  }
+
+  .email {
+    font-size: 16px; /* Réduit la taille du texte de l'email */
+  }
+
+  .follow {
+    font-size: 16px; /* Réduit la taille du texte */
+    margin-top: 5px;
+  }
+}
+
+/* 🖥️ Responsive pour les écrans moyens */
+@media (max-width: 1024px) {
+  .contact-title {
+    font-size: 30px; /* Ajuste légèrement la taille du titre */
+  }
+
+  .contact-logo {
+    width: 45px; /* Ajuste légèrement la taille du logo */
+    height: 45px;
+  }
+
+  .social-buttons {
+    gap: 15px; /* Ajuste l'espacement entre les boutons */
+  }
+
+  .social-btn {
+    width: 45px; /* Ajuste légèrement la taille des boutons */
+    height: 45px;
+  }
+
+  .snap-icon,
+  .phone-icon {
+    width: 22px; /* Ajuste légèrement la taille des icônes */
+    height: 22px;
+  }
+
+  .snap-username,
+  .phonenumber {
+    font-size: 16px; /* Ajuste légèrement la taille du texte */
+  }
+
+  .email {
+    font-size: 18px; /* Ajuste légèrement la taille du texte de l'email */
+  }
+
+  .follow {
+    font-size: 18px; /* Ajuste légèrement la taille du texte */
+  }
 }

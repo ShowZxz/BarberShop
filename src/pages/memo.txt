@@ -1,18 +1,9 @@
 
 Reste a faire :
-- animation 
-- responsives
+
+menu hamburger active
 
 
-Home : 
-Mention Legale Footer
-
-
-Services : 
-
-
-Gallery :
-ajout du title
 
 
 Mention legale :

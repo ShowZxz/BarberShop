@@ -11,15 +11,6 @@ import { useState, useEffect } from "react";
 import "../styles/Home.css";
 
 function Home() {
-  const headerVariants = {
-    hidden: { opacity: 0, scale: 1 },
-    visible: {
-      opacity: 1,
-      scale: 1.3,
-      transition: { duration: 1, delay: 1, type: "spring", stiffness: 100 },
-    },
-    exit: { x: "-100vw", transition: { ease: "easeInOut" } },
-  };
   const divVariants = {
     hidden: { opacity: 0, x: "120vw", filter: "blur(20px)" },
     visible: {
@@ -40,24 +31,13 @@ function Home() {
       transition: { duration: 0.8, ease: "easeInOut" },
     },
   };
-  const spanVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { duration: 4, delay: 2, type: "spring", stiffness: 50 },
-    },
-    exit: { x: "-100vw", transition: { ease: "easeInOut" } },
-  };
 
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      //console.log("ScrollY:", window.scrollY);
-      //console.log("InnerHeight:", window.innerHeight);
       if (window.scrollY > window.innerHeight / 2) {
         setShowButton(true);
-        //console.log("➡️ Affichage du bouton !");
       } else {
         setShowButton(false);
       }

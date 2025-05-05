@@ -54,17 +54,17 @@ function BannerPresentation() {
   return (
     <div className="banner-container">
       <motion.img
-        class="banner-main-title"
+        className="banner-main-title"
         src="/images/logo_banner.png"
         variants={imageVariants}
         initial="hidden"
         animate="visible"
         exit="exit"
       ></motion.img>
-      <div class="banner-zones">
+      <div className="banner-zones">
         <div className="banner-content">
           <motion.img
-            src="/images/logo.jpg"
+            src="./images/LOGO_BINKS_BARBERSHOP.png"
             alt="Logo"
             className="logo-presentation"
             variants={shakeVariants}

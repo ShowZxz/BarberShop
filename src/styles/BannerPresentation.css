@@ -17,9 +17,9 @@
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
   height: 1000px;
   max-width: 100%;
-  max-height: 1000px; /* Ajuste la hauteur selon ton besoin */
+
   margin-top: 20px;
-  gap: 10px;
+  gap: 0px;
 }
 
 .banner-container::before {
@@ -29,16 +29,19 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Couche noire semi-transparente */
-  z-index: -1; /* Place derrière le contenu */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
 .banner-zones {
-  display: flex; /* Place les zones côte à côte */
-  gap: 20px; /* Espacement entre les zones */
-  width: 100%; /* Occupe toute la largeur */
-  max-width: 1900px; /* Largeur maximale */
-  margin: 50px; /* Centre horizontalement */
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1900px;
+  height: auto;
+  max-height: 1000px;
+  margin: 0px;
+  align-items: stretch;
 }
 .banner-main-title {
   align-items: center;
@@ -46,7 +49,9 @@
   margin-bottom: 0px;
   margin-top: 0px;
   width: 50%;
-  height: 20%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 /* Zone de gauche (Texte & Logo) */
 .banner-content {
@@ -57,7 +62,7 @@
   text-align: center;
   color: white;
   background-color: #000000ce;
-  padding: 50px;
+  padding: 40px;
   width: 25%;
 }
 
@@ -89,14 +94,15 @@
 /* Zone de droite (Vidéo) */
 .banner-overlay {
   flex: 0.7; /* Prend 1 part de l'espace disponible */
+  height: 100%;
   overflow: hidden;
 }
 
 /* Vidéo */
 .side-video {
-  width: 100%;
-  height: 600px; /* Ajuste la hauteur selon ton besoin */
-  object-fit: cover;
+  width: 100%; /* La vidéo occupe toute la largeur */
+  height: 100%; /* La vidéo occupe toute la hauteur de son conteneur */
+  object-fit: cover; /* Ajuste la vidéo pour qu'elle couvre tout le conteneur */
   opacity: 1;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -142,20 +148,55 @@
 /* 📱 Responsive */
 @media (max-width: 768px) {
   .banner-zones {
-    flex-direction: column; /* Empile les zones verticalement */
+    flex-direction: column; /* Empile les éléments verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
+    gap: 10px; /* Ajoute un espacement entre les éléments */
   }
 
-  .banner-content,
+  .banner-content {
+    width: 90%; /* Réduit la largeur de la zone de contenu */
+    padding: 20px;
+    height: 50%; /* Réduit le padding */
+  }
+
   .banner-overlay {
-    width: 100%; /* Chaque zone occupe toute la largeur */
-    text-align: center;
+    width: 100%; /* La vidéo occupe toute la largeur */
+    height: auto; /* Ajuste la hauteur automatiquement */
+  }
+
+  .side-video {
+    height: 300px;
+    width: 100%; /* Réduit la hauteur de la vidéo */
+    object-fit: cover; /* Maintient les proportions */
+  }
+
+  .logo-presentation {
+    width: 80px; /* Réduit la taille du logo */
+    height: 80px;
+  }
+
+  .banner-title {
+    font-size: 2rem; /* Réduit la taille du titre */
+  }
+
+  .animated-text span {
+    font-size: 1rem; /* Réduit la taille du texte animé */
+  }
+
+  .social-icons {
+    gap: 10px; /* Réduit l'espacement entre les icônes */
+  }
+
+  .icon {
+    font-size: 20px; /* Réduit la taille des icônes */
   }
 }
 
 @media (max-width: 768px) {
   .banner-main-title {
-    font-size: 2rem; /* Réduit la taille du texte */
-    margin-bottom: 15px; /* Réduit l'espacement */
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 

@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   padding: 0;
+  margin: 0;
   background-color: hsla(30.81081081, 40.2173913%, 63.92156863%, 1);
   overflow-x: hidden;
   width: 100%;
