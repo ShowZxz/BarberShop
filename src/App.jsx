@@ -47,13 +47,13 @@ function App() {
             duration: 1,
           }}
         >
-          <li>
+          <li onClick={toggleMenu}>
             <Link to="/">Accueil</Link>
           </li>
-          <li>
+          <li onClick={toggleMenu}>
             <Link to="/services">Services</Link>
           </li>
-          <li>
+          <li onClick={toggleMenu}>
             <Link to="/">
               <motion.img
                 src="./images/LOGO_BINKS_BARBERSHOP.png"
@@ -64,10 +64,10 @@ function App() {
               />
             </Link>
           </li>
-          <li>
+          <li onClick={toggleMenu}>
             <Link to="/gallery">Galerie</Link>
           </li>
-          <li>
+          <li onClick={toggleMenu}>
             <Link to="/reviews">Avis</Link>
           </li>
         </motion.ul>

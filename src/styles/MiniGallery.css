@@ -146,3 +146,72 @@
     padding: 10px 20px; /* Ajuste légèrement le padding du bouton */
   }
 }
+
+@media (max-width: 1500px) {
+  .image-cont img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+  }
+
+  .nav-button.left {
+    left: -220px;
+  }
+
+  .nav-button.right {
+    right: -220px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .image-cont img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+  }
+
+  .nav-button.left {
+    left: -80px;
+  }
+
+  .nav-button.right {
+    right: -80px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .image-cont img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+  }
+
+  .nav-button.left {
+    left: -80px;
+  }
+
+  .nav-button.right {
+    right: -80px;
+  }
+}

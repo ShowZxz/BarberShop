@@ -36,7 +36,8 @@ function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > window.innerHeight / 2) {
+      console.log("Scroll position:", window.scrollY); // Vérifie la position de défilement
+      if (window.scrollY > 100) {
         setShowButton(true);
       } else {
         setShowButton(false);
@@ -74,11 +75,10 @@ function Home() {
       <div className="mention-legal">
         <MentionLegal />
       </div>
-      {showButton && (
-        <a className={`go-top ${showButton ? "show" : ""}`} href="#top">
-          <img src="/images/upload.png" alt="Retour en haut" />
-        </a>
-      )}
+
+      <a className="go-top" id="go-top">
+        <img src="/images/upload.png" alt="Retour en haut" />
+      </a>
     </motion.div>
   );
 }
