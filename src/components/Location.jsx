@@ -42,7 +42,7 @@ function Location() {
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"} // Anime uniquement si visible
       >
-        Où nous trouver ? 📍
+        🗺️ Le style commence ici, à deux pas de chez vous.
       </motion.h1>
       <div className="map-container">
         <iframe

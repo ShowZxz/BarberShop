@@ -1,16 +1,19 @@
 import "../styles/TopGallerySection.css";
 
-function TopGallerySection() {
-
-}
+function TopGallerySection() {}
 
 <div className="top-gallery-section">
-<img src="/images/chair.jpg" alt="Coupe de cheveux" />
-<div className="text-section">
+  <img src="/images/chair.jpg" alt="Coupe de cheveux" />
+  <div className="text-section">
     <h2>Nos services</h2>
-    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempus enim sed diam bibendum sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum consequat.</span>
-</div>
+    <span>
+      Notre galerie est bien plus qu’un simple catalogue de coupes. C’est le
+      reflet de notre passion, de notre exigence et du lien que nous tissons
+      avec nos clients. Chaque image témoigne d’un travail soigné, d’un conseil
+      adapté et d’un style unique. Inspirez-vous, projetez-vous, imaginez ce que
+      l’on pourrait créer ensemble.
+    </span>
+  </div>
+</div>;
 
-</div>
-    
 export default TopGallerySection;

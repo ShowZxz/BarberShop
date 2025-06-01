@@ -34,9 +34,9 @@ const categories = {
 
 const categoryImages = {
   Cheveux: "/images/coupe1.jpg",
-  Soins: "/images/coupe1.jpg",
-  Barbe: "/images/coupe1.jpg",
-  Formules: "/images/coupe1.jpg",
+  Soins: "/images/soins.jpg",
+  Barbe: "/images/barbe.jpeg",
+  Formules: "/images/formule.jpg",
 };
 
 function Services() {

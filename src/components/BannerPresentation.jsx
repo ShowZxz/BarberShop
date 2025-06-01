@@ -37,7 +37,7 @@ function BannerPresentation() {
   };
 
   const text =
-    "Découvrez une nouvelle façon de se couper les cheveux. Excitavit hic ardor milites per municipia plurima, quae isdem conterminant, dispositos et castella, ";
+    "Découvrez une nouvelle façon de se couper les cheveux. Le Bink’s Barbershop, c’est plus qu’un salon : c’est une ambiance, une équipe passionnée, une expertise au service de votre style. Ici, on ne vous coiffe pas seulement — on vous conseille, on vous écoute, on vous transforme. ";
   const letters = text.split(""); // Divise le texte en lettres
 
   const letterVariants = {

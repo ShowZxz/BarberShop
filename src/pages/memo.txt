@@ -1,15 +1,11 @@
 
 Reste a faire :
 trouver le bug de go top
-margin top responsive home.jsx
 
 
 
 
-Mention legale :
-???????????
-Mention legale 
-Créateur moi
+
 
 Idée : 
 Recent post instagram (visualiser)
@@ -21,3 +17,26 @@ image de coupe (beaucoup)
 Video du salon 
 Video ou image exterieur
 
+
+Mention legale :
+
+Votre identité	nom et prénom
+
+Vos coordonnées	
+adresse du domicile
+adresse de courrier électronique ou numéro de téléphone pour contacter votre entreprise
+
+
+Les mentions relatives à la propriété intellectuelle	
+si vous utilisez des images, illustrations, photographies :  vous devez faire figurer leur propriété intellectuelle
+pour les textes qui ne sont pas les vôtres, vous devez recueillir l’autorisation de l’auteur ou tout du moins citer la source du texte
+
+Les mentions relatives à l’hébergement du site	
+vous devez prévoir une page de mentions légales qui doit inclure des informations relatives à l’hébergement du site (même si le site est hébergé à titre gratuit).
+
+Ces mentions portent sur :
+
+le nom de l’hébergeur
+la raison sociale
+l’adresse
+le numéro de téléphone.

@@ -1,6 +1,6 @@
 import "../styles/VideoSection.css";
 const paragraphe =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.";
+  "Notre galerie est bien plus qu’un simple catalogue de coupes. C’est le reflet de notre passion, de notre exigence et du lien que nous tissons avec nos clients. Chaque image témoigne d’un travail soigné, d’un conseil adapté et d’un style unique. Inspirez-vous, projetez-vous, imaginez ce que l’on pourrait créer ensemble.";
 
 function VideoSection() {
   return (

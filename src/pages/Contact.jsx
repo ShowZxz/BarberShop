@@ -56,7 +56,7 @@ function Contact() {
         {/* Snapchat (Image SVG à la place) */}
         <div className="social-btn snapchat">
           <a
-            href="https://snapchat.com"
+            href="https://snapchat.com/add/lebinks.barber"
             target="_blank"
             rel="noopener noreferrer"
             className="snapchat-link"
