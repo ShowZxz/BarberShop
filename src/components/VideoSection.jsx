@@ -1,6 +1,6 @@
 import "../styles/VideoSection.css";
 const paragraphe =
-  "Notre galerie est bien plus qu’un simple catalogue de coupes. C’est le reflet de notre passion, de notre exigence et du lien que nous tissons avec nos clients. Chaque image témoigne d’un travail soigné, d’un conseil adapté et d’un style unique. Inspirez-vous, projetez-vous, imaginez ce que l’on pourrait créer ensemble.";
+  "Notre galerie est bien plus qu’un simple catalogue de coupes. C’est le reflet de notre passion, de notre exigence et du lien que nous tissons avec nos clients. Chaque image témoigne d’un travail soigné, d’un conseil adapté et d’un style unique. Inspirez-vous, projetez-vous, imaginez ce que l’on pourrait créer ensemble. ";
 
 function VideoSection() {
   return (
