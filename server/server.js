@@ -107,7 +107,6 @@ app.listen(PORT, () => {
 });
 
 
-const path = require("path");
 
 // Serve les fichiers React buildés
 app.use(express.static(path.join(__dirname, "..", "dist")));
