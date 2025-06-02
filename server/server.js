@@ -104,3 +104,14 @@ app.delete("/api/avis/:id", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Serveur en ligne sur http://localhost:${PORT}`);
 });
+
+
+const path = require("path");
+
+// Serve les fichiers React buildés
+app.use(express.static(path.join(__dirname, "..", "dist")));
+
+// Fallback pour React Router
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "dist", "index.html"));
+});
