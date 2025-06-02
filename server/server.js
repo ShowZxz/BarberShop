@@ -102,9 +102,6 @@ app.delete("/api/avis/:id", (req, res) => {
   res.json({ message: "Avis supprimé" });
 });
 
-app.listen(PORT, () => {
-  console.log(`Serveur en ligne sur http://localhost:${PORT}`);
-});
 
 
 
@@ -114,4 +111,8 @@ app.use(express.static(path.join(__dirname, "..", "dist")));
 // Fallback pour React Router
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "dist", "index.html"));
+});
+
+app.listen(PORT, () => {
+  console.log(`Serveur en ligne sur http://localhost:${PORT}`);
 });
