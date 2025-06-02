@@ -3,9 +3,10 @@ const fs = require("fs");
 const cors = require("cors");
 const app = express();
 const PORT = 5000;
+const path = require("path");
 
-const filePath = "./data/avis.json";
-const bannedWordsPath = "./data/banword.txt";
+const filePath = path.join(__dirname, "data","avis.json");
+const bannedWordsPath = path.join(__dirname, "data", "banword.txt");
 
 app.use(cors());
 app.use(express.json());
@@ -19,12 +20,12 @@ const bannedWords = loadBannedWords();
 
 // ➕ Ajouter un avis
 app.post("/api/avis", (req, res) => {
-  console.log("Requête POST reçue avec :", req.body); // 👈 Debug 1
+  console.log("Requête POST reçue avec :", req.body); 
 
   const { pseudo, message, rating } = req.body;
     console.log("Reçu :", pseudo, message, rating);
   if (!pseudo || !message || !rating) {
-    console.log("❌ Champs manquants :", { pseudo, message, rating }); // 👈 Debug 2
+    console.log("❌ Champs manquants :", { pseudo, message, rating }); 
     return res.status(400).json({ error: "Champs manquants" });
   }
   if (message.length < 10) {
