@@ -28,7 +28,7 @@ function MiniReview() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/avis/recent")
+    fetch("/api/avis/recent")
       .then((res) => res.json())
       .then((data) => {
         setAvis(data);

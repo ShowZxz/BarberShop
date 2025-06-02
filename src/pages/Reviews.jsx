@@ -9,7 +9,7 @@ function Reviews() {
 
   // 🔁 Charger les avis au chargement
   useEffect(() => {
-    fetch("http://localhost:5000/api/avis")
+    fetch("/api/avis")
       .then((res) => res.json())
       .then((data) => {
         setAvis(data);
@@ -36,7 +36,7 @@ function Reviews() {
 
     console.log("Données envoyées au serveur :", formData); // 🔍 Debug avant envoi
 
-    fetch("http://localhost:5000/api/avis", {
+    fetch("/api/avis", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
